@@ -28,13 +28,6 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 
 	@Override
 	@Transactional
-	public void insertEmployeeById(Employee employee) {
-		Session session=entityManager.unwrap(Session.class);
-		session.saveOrUpdate(employee);
-	}
-	
-	@Override
-	@Transactional
 	public void updateEmployeeById(Employee employee) {
 		Session session=entityManager.unwrap(Session.class);
 		session.saveOrUpdate(employee);

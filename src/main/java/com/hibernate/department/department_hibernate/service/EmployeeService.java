@@ -14,7 +14,7 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeDaoImpl employeeDao;
 
-	public void insertEmployeeById(Employee emp) {
+	public void insertOrUpdateEmployeeById(Employee emp) {
 		employeeDao.updateEmployeeById(emp);
 
 	}
@@ -25,10 +25,6 @@ public class EmployeeService {
 
 	public void deleteById(int id) {
 		employeeDao.deleteEmployeeById(id);
-	}
-
-	public void updateEmployeeById(Employee emp) {
-		employeeDao.updateEmployeeById(emp);
 	}
 
 	public List<Employee> getAllEmployees() {
