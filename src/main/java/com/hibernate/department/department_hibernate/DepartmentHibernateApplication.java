@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.hibernate.department.department_hibernate.Model.Employee;
-import com.hibernate.department.department_hibernate.controller.EmployeeController;
+import com.hibernate.department.department_hibernate.Model.User;
+import com.hibernate.department.department_hibernate.controller.UserAuthenticationController;
 
 @SpringBootApplication
 @CrossOrigin
@@ -18,7 +18,7 @@ import com.hibernate.department.department_hibernate.controller.EmployeeControll
 public class DepartmentHibernateApplication {
 	
 	@Autowired
-	EmployeeController employeeController;
+	UserAuthenticationController userAuthenticationController;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DepartmentHibernateApplication.class, args);
@@ -26,7 +26,7 @@ public class DepartmentHibernateApplication {
 	
 	 @PostConstruct
 	    private void init() {
-		 employeeController.addNewEmployee(new Employee(0, "SPIVA", "SPIVA"));
+		 userAuthenticationController.addNewUser(new User(0, "abishek", "abishek"));
 	    }
 
 }
